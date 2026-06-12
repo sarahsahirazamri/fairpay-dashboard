@@ -204,13 +204,26 @@ def inject_css():
 
           .fp-note { background:#FBF6E9; border:1px solid rgba(217,154,6,.3); border-radius:11px;
                      padding:13px 15px; font-size:13px; color:#6b5410; margin-top:14px; }
-          /* top header bar (replaces the sidebar) */
-          .fp-topbar { display:flex; align-items:center; justify-content:space-between; gap:16px;
-                       flex-wrap:wrap; padding-bottom:16px; margin-bottom:4px; border-bottom:1px solid #E1E7F0; }
-          .fp-brandname { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px;
+          /* top header (replaces the sidebar) */
+          .fp-topbar { display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
+                       flex-wrap:wrap; margin-bottom:2px; }
+          .fp-brandname { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:21px;
                           color:#0E1F33; letter-spacing:-.02em; line-height:1; }
-          .fp-brandsub { font-size:12.5px; color:#5E7088; margin-top:3px; }
-          .fp-chips { display:flex; flex-wrap:wrap; align-items:center; }
+          .fp-brandsub { font-size:12.5px; color:#5E7088; margin-top:4px; }
+          .fp-model { font-family:'JetBrains Mono',monospace; font-size:11.5px; color:#5E7088;
+                      display:flex; align-items:center; gap:7px; padding-top:4px; }
+          .fp-model .dot { width:7px; height:7px; border-radius:50%; background:#0FA968; }
+          .fp-metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:16px 0 8px; }
+          .fp-mcard { background:#FFFFFF; border:1px solid #E1E7F0; border-radius:14px; padding:16px 18px;
+                      box-shadow:0 1px 2px rgba(14,31,51,.05), 0 16px 40px -30px rgba(14,31,51,.35); }
+          .fp-mcard .ml { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em;
+                          text-transform:uppercase; color:#5E7088; display:flex; align-items:center; gap:7px; }
+          .fp-mcard .ml .dot { width:7px; height:7px; border-radius:50%; background:#0FA968; }
+          .fp-mcard .mv { font-family:'JetBrains Mono',monospace; font-weight:700; font-size:34px;
+                          line-height:1; color:#0E1F33; margin-top:9px; }
+          .fp-mcard .mv.emerald { color:#0B8454; }
+          .fp-mcard .ms { font-size:12px; color:#5E7088; margin-top:7px; }
+          @media (max-width:680px){ .fp-metrics { grid-template-columns:1fr; } }
 
           /* top tabs styling */
           .stTabs [data-baseweb="tab-list"] { gap:6px; border-bottom:1px solid #E1E7F0; }
@@ -577,7 +590,7 @@ def main():
 
     metrics = art["market_aggregates"]["metrics"]
 
-    # Top header bar with the model metrics (replaces the sidebar)
+    # Top header with the model metrics as cards (replaces the sidebar)
     st.markdown(
         f"""
         <div class="fp-topbar">
@@ -585,11 +598,23 @@ def main():
             <div class="fp-brandname">FairPay Validator</div>
             <div class="fp-brandsub">AI talent compensation intelligence &middot; WQD7003 Group 12</div>
           </div>
-          <div class="fp-chips">
-            <span class="fp-chip"><span class="dot"></span> Gradient Boosting</span>
-            <span class="fp-chip">R squared <b>{metrics['r2']:.2f}</b></span>
-            <span class="fp-chip">MAE <b>{usd(metrics['mae'])}</b></span>
-            <span class="fp-chip">MAPE <b>{metrics['mape']:.2f}%</b></span>
+          <div class="fp-model"><span class="dot"></span> Gradient Boosting, production model</div>
+        </div>
+        <div class="fp-metrics">
+          <div class="fp-mcard">
+            <div class="ml"><span class="dot"></span> R squared</div>
+            <div class="mv emerald">{metrics['r2']:.2f}</div>
+            <div class="ms">variance explained, log scale</div>
+          </div>
+          <div class="fp-mcard">
+            <div class="ml">MAE</div>
+            <div class="mv">{usd(metrics['mae'])}</div>
+            <div class="ms">average error in US dollars</div>
+          </div>
+          <div class="fp-mcard">
+            <div class="ml">MAPE</div>
+            <div class="mv">{metrics['mape']:.2f}%</div>
+            <div class="ms">mean absolute percent error</div>
           </div>
         </div>
         """,
@@ -598,7 +623,7 @@ def main():
 
     # Module selection by top tabs
     tab_a, tab_b, tab_c = st.tabs([
-        "A \u2014 Salary Estimator",
+        "A \u00b7 Salary Estimator",
         "B \u00b7 Geography and Skills",
         "C \u00b7 Career Ladder",
     ])

@@ -240,17 +240,19 @@ label, [data-testid="stWidgetLabel"] {{
             opacity: 1 !important;
         }}
 
-/* slider value — always visible */
+/* force slider thumb value always visible */
 div[data-testid="stSlider"] [data-testid="stThumbValue"] {{
-    color: {C["text"]} !important;
-    background: {C["card2"]} !important;
-    border: 1px solid {C["border"]} !important;
     opacity: 1 !important;
     visibility: visible !important;
+    display: block !important;
+    color: {C["text"]} !important;
+    background-color: {C["card"]} !important;
+    border: 1px solid {C["border"]} !important;
+    border-radius: 4px !important;
+    padding: 2px 6px !important;
+    z-index: 999 !important;
 }}
-div[data-testid="stSlider"] [data-testid="stTickBarMin"],
-div[data-testid="stSlider"] [data-testid="stTickBarMax"] {{
-    color: {C["subtle"]} !important;
+[data-testid="stSlider"]:not(:hover) [data-testid="stThumbValue"] {{
     opacity: 1 !important;
 }}
 

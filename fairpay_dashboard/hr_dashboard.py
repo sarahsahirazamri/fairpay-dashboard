@@ -240,6 +240,20 @@ label, [data-testid="stWidgetLabel"] {{
             opacity: 1 !important;
         }}
 
+/* slider value — always visible */
+div[data-testid="stSlider"] [data-testid="stThumbValue"] {{
+    color: {C["text"]} !important;
+    background: {C["card2"]} !important;
+    border: 1px solid {C["border"]} !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}}
+div[data-testid="stSlider"] [data-testid="stTickBarMin"],
+div[data-testid="stSlider"] [data-testid="stTickBarMax"] {{
+    color: {C["subtle"]} !important;
+    opacity: 1 !important;
+}}
+
 </style>
 """, unsafe_allow_html=True)
 

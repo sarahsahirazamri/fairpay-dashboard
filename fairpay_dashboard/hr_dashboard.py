@@ -58,7 +58,7 @@ PLY = dict(
 # ─────────────────────────────────────────────────────────────────────────────
 # CONSTANTS
 # ─────────────────────────────────────────────────────────────────────────────
-ARTEFACT_DIR = "deployment_artefacts"
+ARTEFACT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deployment_artefacts")
 
 EXP_MAP   = {"EN": "Entry", "MI": "Mid", "SE": "Senior", "EX": "Executive"}
 EXP_OPTS  = ["EN", "MI", "SE", "EX"]

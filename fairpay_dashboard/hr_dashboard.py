@@ -598,7 +598,7 @@ def main():
 
     # Module selection by top tabs
     tab_a, tab_b, tab_c = st.tabs([
-        "A \u00b7 Salary Estimator",
+        "A \u2014 Salary Estimator",
         "B \u00b7 Geography and Skills",
         "C \u00b7 Career Ladder",
     ])

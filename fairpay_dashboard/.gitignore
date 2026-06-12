@@ -1,0 +1,14 @@
+# Local environment and clutter
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+
+# Streamlit local secrets (never commit)
+.streamlit/secrets.toml
+
+# Do NOT ignore deployment_artefacts/ — those files must be committed
+# so Streamlit Cloud can load the model.

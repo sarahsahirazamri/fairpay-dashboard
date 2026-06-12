@@ -172,7 +172,8 @@ def inject_css():
           @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&display=swap');
           html, body, [class*="css"] { font-family:'Inter', system-ui, sans-serif; }
           h1, h2, h3 { font-family:'Space Grotesk', sans-serif; letter-spacing:-.01em; }
-          .block-container { padding-top:2.2rem; max-width:1180px; }
+          .block-container { padding-top:4.75rem; max-width:1180px; }
+          header[data-testid="stHeader"] { background:rgba(244,246,249,.85); backdrop-filter:blur(8px); }
 
           .fp-hero { background:linear-gradient(157deg,#0E1F33,#13283F 60%,#0d2138);
                      border-radius:18px; padding:26px 30px; color:#fff;

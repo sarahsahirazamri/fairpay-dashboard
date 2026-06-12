@@ -229,6 +229,13 @@ def inject_css():
           .stTabs [data-baseweb="tab-list"] { gap:6px; border-bottom:1px solid #E1E7F0; }
           .stTabs [data-baseweb="tab"] { font-family:'Space Grotesk',sans-serif; font-weight:500;
                                          font-size:14.5px; padding-top:8px; padding-bottom:8px; }
+          .stTabs [data-baseweb="tab"]:hover {
+              color: #0FA968 !important;                  /* Changes text to EMERALD green */
+              border-bottom-color: #0FA968 !important;     /* Changes underline to EMERALD green */
+              background-color: rgba(15, 169, 104, 0.05); /* Adds a subtle green tint */
+              border-radius: 4px 4px 0 0;
+              transition: all 0.2s ease-in-out;
+          }
         </style>
         """,
         unsafe_allow_html=True,

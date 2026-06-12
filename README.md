@@ -1,1 +1,1 @@
-# fairpay-dashboard
+# fairpay-validator

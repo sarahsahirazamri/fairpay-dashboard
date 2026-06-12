@@ -256,6 +256,15 @@ div[data-testid="stSlider"] [data-testid="stThumbValue"] {{
     opacity: 1 !important;
 }}
 
+/* slider min/max tick labels below track */
+div[data-testid="stTickBarMin"],
+div[data-testid="stTickBarMax"] {{
+    color: {C["subtle"]} !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-size: 0.72rem !important;
+}}
+
 </style>
 """, unsafe_allow_html=True)
 

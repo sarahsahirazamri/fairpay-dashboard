@@ -603,7 +603,7 @@ def main():
         <div class="fp-topbar">
           <div>
             <div class="fp-brandname">FairPay Validator</div>
-            <div class="fp-brandsub">AI talent compensation intelligence &middot; WQD7003 Group 12</div>
+            <div class="fp-brandsub">Regression-Based Salary Benchmarking for AI Job Postings &middot; WQD7003 Group 12</div>
           </div>
           <div class="fp-model"><span class="dot"></span> Gradient Boosting, production model</div>
         </div>

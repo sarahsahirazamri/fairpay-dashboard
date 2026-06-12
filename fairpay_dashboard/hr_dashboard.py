@@ -730,8 +730,8 @@ def module_c(art):
         title="Salary Distribution by Career Stage",
         margin=dict(l=50, r=20, t=50, b=50)
     )
-    fig.update_yaxes(tickprefix="", tickformat="", title="")
-    fig.update_xaxes(tickprefix="$", tickformat=",", tickangle=-25, title="")
+    fig.update_yaxes(tickprefix="$", tickformat="", title="")
+    fig.update_xaxes(tickprefix="", tickformat=",", tickangle=-25, title="")
     st.plotly_chart(fig, use_container_width=True)
 
     st.markdown(f"""<div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;

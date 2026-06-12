@@ -613,7 +613,7 @@ def module_b(art):
             paper_bgcolor=PLY.get("paper_bgcolor"),
             plot_bgcolor=PLY.get("plot_bgcolor"),
             font=PLY.get("font"),
-            margin=PLY.get("margin"),
+            margin=dict(l=80, r=20, t=50, b=120),
             title_font=PLY.get("title_font"),
             title="Salary Distribution by Country (ranked by median)",
             showlegend=False, 

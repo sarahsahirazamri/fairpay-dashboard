@@ -424,7 +424,7 @@ def module_b(art):
         unsafe_allow_html=True,
     )
 
-    tab_geo, tab_skill, tab_remote = st.tabs(["Country pay", "Skill premiums", "Work arrangement"])
+    tab_geo, tab_skill, tab_remote = st.tabs(["🌍Country pay", "💻 Skill premiums", "💼 Work arrangement"])
 
     with tab_geo:
         cm = agg["country_median"]
